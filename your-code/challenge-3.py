@@ -11,6 +11,8 @@ For example, if you are given the number 15, there are 3 possibilities to compos
 The following function shows one way to solve the problem but the code is not ideal or efficient.
 Refactor the code based on what you have learned about code simplicity and efficiency.
 """
+#for me this code looks fine. There is details that can be changed. But can be left the way it is. 
+
 
 def my_function(X):
     solutions = []

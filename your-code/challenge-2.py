@@ -36,3 +36,32 @@ b = input('Enter maximum string length: ')
 n = input('How many random strings to generate? ')
 
 print(BatchStringGenerator(int(n), int(a), int(b)))
+
+
+#refactored -> all imports at the top, def RandomStringGenerator reduce the unnecessary variables
+import re
+import random
+import sys
+def RandomStringGenerator(l=12, a=list(string.ascii_lowercase+string.digits)):
+    s = ''
+    for i in range(l):  
+        s += random.choice(a)
+    return s
+
+def BatchStringGenerator(n, a=8, b=12):
+    r = []
+    for i in range(n):
+        if a < b:
+            c = random.choice(range(a, b))
+        elif a == b:
+            c = a
+        else:
+            sys.exit('Incorrect min and max string lengths. Try again.')
+        r.append(RandomStringGenerator(c))
+    return r
+
+a = input('Enter minimum string length: ')
+b = input('Enter maximum string length: ')
+n = input('How many random strings to generate? ')
+
+print(BatchStringGenerator(int(n), int(a), int(b)))
